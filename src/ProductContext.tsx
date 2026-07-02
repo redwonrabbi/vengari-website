@@ -26,16 +26,7 @@ export function ProductProvider({ children }: { children: ReactNode }) {
     try {
       const saved = localStorage.getItem('store_products');
       if (saved) {
-        let parsed = JSON.parse(saved) as Product[];
-        parsed = parsed.map(p => {
-          const initP = INITIAL_PRODUCTS.find(ip => ip.id === p.id);
-          // Always apply local images if it's an initial product
-          if (initP) {
-            return { ...p, image: initP.image, images: initP.images };
-          }
-          return p;
-        });
-        return parsed;
+        return JSON.parse(saved) as Product[];
       }
     } catch(e) {}
     return INITIAL_PRODUCTS;
