@@ -18,7 +18,7 @@ async function startServer() {
           scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
           styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
           fontSrc: ["'self'", "https://fonts.gstatic.com"],
-          imgSrc: ["'self'", "data:", "blob:", "https://images.unsplash.com"],
+          imgSrc: ["'self'", "data:", "blob:", "https:"],
           connectSrc: ["'self'", "ws:", "wss:"], // For Vite HMR and API requests
           frameAncestors: null, // Allow embedding in iframes (AI Studio)
         },
